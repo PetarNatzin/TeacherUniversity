@@ -1,0 +1,32 @@
+﻿@using TeacherUniversity.Core.Constants
+
+@*@section Scripts{
+
+    }*@
+
+@if (ViewData[MessageConstants.ErrorMessage] != null)
+{
+    <script>
+        $(function() {
+            toastr.error('@ViewData[MessageConstants.ErrorMessage]?.ToString()');
+        });
+    </script>
+}
+
+@if (ViewData[MessageConstants.SuccessMessage] != null)
+{
+    <script>
+        $(function() {
+            toastr.success('@ViewData[MessageConstants.SuccessMessage]?.ToString()');
+        });
+    </script>
+}
+
+@if (ViewData[MessageConstants.WariningMessage] != null)
+{
+    <script>
+        $(function() {
+            toastr.warning('@ViewData[MessageConstants.WariningMessage]?.ToString()');
+        });
+    </script>
+}

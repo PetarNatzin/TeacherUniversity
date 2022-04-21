@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using TeacherUniversity.Core.Constants;
 using TeacherUniversity.Models;
 
 namespace TeacherUniversity.Controllers
@@ -15,6 +16,10 @@ namespace TeacherUniversity.Controllers
 
         public IActionResult Index()
         {
+            //ViewData[MessageConstants.ErrorMessage] = "Възникна грешка!";
+            
+            ViewData[MessageConstants.SuccessMessage] = "Данните бяха успешно заредени!";
+            
             return View();
         }
 
