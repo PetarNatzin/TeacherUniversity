@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using TeacherUniversity.Core.Constants;
-using TeacherUniversity.Data;
+using TeacherUniversity.Infrastructure.Data;
 using TeacherUniversity.ModelBinders;
 
 var builder = WebApplication.CreateBuilder(args);
