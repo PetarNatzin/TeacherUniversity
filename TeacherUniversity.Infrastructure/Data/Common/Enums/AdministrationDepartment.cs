@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace TeacherUniversity.Infrastructure.Data.Common.Enums
 {
-    public enum Status
+    public enum AdministrationDepartment
     {
-        Awaiting,
-        Confirmed,
-        Finished
+        CathedraInspector,
+        EducationalInspector,
+        ScientificInspector
     }
 }
