@@ -21,11 +21,15 @@ namespace TeacherUniversity.Infrastructure.Data
         public Commission Commission { get; set; }
 
         [Required]
+        [Column(TypeName = "date")]
+        public DateTime ProtocolDate { get; set; } = DateTime.Today;
+
+        [Required]
         public QualificationalDegree QualificationalDegree { get; set; }
 
         [Required]
         public Subject Subject { get; set; }
 
-        public ICollection<Candidature> Candidatures { get; set; } = new List<Candidature>();
+        public IList<Candidature> Candidatures { get; set; } = new List<Candidature>();
     }
 }

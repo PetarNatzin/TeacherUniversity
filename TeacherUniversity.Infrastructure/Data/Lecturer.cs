@@ -1,0 +1,40 @@
+﻿using Microsoft.AspNetCore.Identity;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using TeacherUniversity.Infrastructure.Data.Common.Enums;
+
+namespace TeacherUniversity.Infrastructure.Data
+{
+    public class Lecturer
+    {
+        [Key]
+        public int Id { get; set; }
+
+        public int IdentityUserId { get; set; }
+
+        [Required]
+        [ForeignKey(nameof(IdentityUserId))]
+        public IdentityUser IdentityUser { get; set; }
+
+        [Required]
+        [StringLength(200)]
+        public string FirstName { get; set; }
+                
+        [StringLength(200)]
+        public string? SecondName { get; set; }
+
+        [Required]
+        [StringLength(200)]
+        public string LastName { get; set; }
+
+        [Required]
+        public LecturerTitle LecturerTitle { get; set; }
+               
+        public ScientificDegree ScientificDegree { get; set; }
+    }
+}
