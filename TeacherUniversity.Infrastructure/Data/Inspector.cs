@@ -15,7 +15,7 @@ namespace TeacherUniversity.Infrastructure.Data
         [Key]
         public int Id { get; set; }
 
-        public int IdentityUserId { get; set; }
+        public string IdentityUserId { get; set; }
 
         [Required]
         [ForeignKey(nameof(IdentityUserId))]
