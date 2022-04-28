@@ -40,16 +40,18 @@ namespace TeacherUniversity.Controllers
             //    return View(model);
             //}
 
-            //if (await service.CreateTeacher(model))
-            //{
-            //    ViewData[MessageConstant.SuccessMessage] = "Успешен запис!";
-            //}
-            //else
-            //{
-            //    ViewData[MessageConstant.ErrorMessage] = "Възникна грешка!";
-            //}
+            string userId = ViewBag.userid = userManager.GetUserId(HttpContext.User);
 
-            await service.CreateTeacher(model);
+            if (await service.CreateTeacher(model, userId))
+            {
+                ViewData[MessageConstants.SuccessMessage] = $"Успешен запис! {userId}";                
+            }
+            else
+            {
+                ViewData[MessageConstants.ErrorMessage] = "Възникна грешка!";
+            }
+
+            //await service.CreateTeacher(model);
 
             return View(model);
         }

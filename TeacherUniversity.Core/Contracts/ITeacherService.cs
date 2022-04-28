@@ -12,6 +12,6 @@ namespace TeacherUniversity.Core.Contracts
     {
         Task<IdentityUser> GetIdentityUserId(string id);
 
-        Task<bool> CreateTeacher(TeacherCreateViewModel model);
+        Task<bool> CreateTeacher(TeacherCreateViewModel model, string userId);
     }
 }

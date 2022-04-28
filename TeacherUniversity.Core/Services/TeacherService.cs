@@ -23,12 +23,12 @@ namespace TeacherUniversity.Core.Services
             //userManager = _userManager;
         }
 
-        public async Task<bool> CreateTeacher(TeacherCreateViewModel model)
+        public async Task<bool> CreateTeacher(TeacherCreateViewModel model, string userId)
         {
             bool result = false;
             Teacher teacher = new Teacher()
             {
-                IdentityUserId = "d460a94e-2fb2-4792-add2-bcdaf50152fb",
+                IdentityUserId = userId,
                 FirstName = model.FirstName,
                 SecondName = model.SecondName,
                 LastName = model.LastName,
