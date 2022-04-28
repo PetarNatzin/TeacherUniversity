@@ -1,0 +1,80 @@
+﻿@using TeacherUniversity.Core.Models
+@model TeacherCreateViewModel
+@{
+    ViewData["Title"] = "Create Teacher";
+}
+
+<div class="row">
+    <div class="col-4">
+        <form id="create" method="post">
+            @*<input type="hidden" name="Id" value="@Model.Id" />*@
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-floating">
+                <label asp-for="FirstName" class="form-label"></label>
+                <input asp-for="FirstName" class="form-control" aria-required="true" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-floating">
+                <label asp-for="SecondName" class="form-label"></label>
+                <input asp-for="SecondName" class="form-control" aria-required="false" />
+                <span asp-validation-for="SecondName" class="text-danger"></span>
+            </div>
+            <div class="form-floating">
+                <label asp-for="LastName" class="form-label"></label>
+                <input asp-for="LastName" class="form-control" autocomplete="current-password" aria-required="true" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-floating">
+                <label asp-for="PersonalIdentifierNumber" class="form-label"></label>
+                <input asp-for="PersonalIdentifierNumber" class="form-control" autocomplete="current-password" aria-required="true" />
+                <span asp-validation-for="PersonalIdentifierNumber" class="text-danger"></span>
+            </div>
+            <div class="form-floating">
+                <label asp-for="GradudatedUniversity" class="form-label"></label>
+                <input asp-for="GradudatedUniversity" class="form-control" autocomplete="current-password" aria-required="true" />
+                <span asp-validation-for="GradudatedUniversity" class="text-danger"></span>
+            </div>
+            <div class="form-floating">
+                <label asp-for="HigherEducationDegree" class="form-label"></label>
+                <input asp-for="HigherEducationDegree" class="form-control" autocomplete="current-password" aria-required="true" />
+                <span asp-validation-for="HigherEducationDegree" class="text-danger"></span>
+            </div>
+            <div class="form-floating">
+                <label asp-for="DiplomaData" class="form-label"></label>
+                <input asp-for="DiplomaData" class="form-control" autocomplete="current-password" aria-required="true" />
+                <span asp-validation-for="DiplomaData" class="text-danger"></span>
+            </div>
+            <div class="form-floating">
+                <label asp-for="PlaceOfWork" class="form-label"></label>
+                <input asp-for="PlaceOfWork" class="form-control" autocomplete="current-password" aria-required="true" />
+                <span asp-validation-for="PlaceOfWork" class="text-danger"></span>
+            </div>
+            <div class="form-floating">
+                <label asp-for="PositionAtWork" class="form-label"></label>
+                <input asp-for="PositionAtWork" class="form-control" autocomplete="current-password" aria-required="true" />
+                <span asp-validation-for="PositionAtWork" class="text-danger"></span>
+            </div>
+            <div class="form-floating">
+                <label asp-for="PersonalAddress" class="form-label"></label>
+                <input asp-for="PersonalAddress" class="form-control" autocomplete="current-password" aria-required="true" />
+                <span asp-validation-for="PersonalAddress" class="text-danger"></span>
+            </div>
+            <div class="form-floating">
+                <label asp-for="PersonalPhoneNumber" class="form-label"></label>
+                <input asp-for="PersonalPhoneNumber" class="form-control" autocomplete="current-password" aria-required="true" />
+                <span asp-validation-for="PersonalPhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="row">&nbsp;</div>
+            <div class="row">
+                <div class="col-4">
+                    <button id="login-submit" type="submit" class="btn btn-primary btn-block">Submit</button>
+                </div>
+                <!-- /.col -->
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
