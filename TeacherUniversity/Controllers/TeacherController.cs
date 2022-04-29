@@ -19,10 +19,20 @@ namespace TeacherUniversity.Controllers
             userManager = _userManager;
             service = _service;
         }
-        public IActionResult Index()
+
+        public async Task<IActionResult> Index()
         {
-            ViewBag.userid = userManager.GetUserId(HttpContext.User);
-            return View();
+            string userId = ViewBag.userid = userManager.GetUserId(HttpContext.User);
+
+            if (await service.TeacherCreated(userId))
+            {
+                return View(); //"/teacher/index"
+            }
+            else
+            {
+                return Redirect("/teacher/create");
+            }            
+            
         }
 
         public async Task<IActionResult> Create() //string id

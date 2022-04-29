@@ -62,5 +62,29 @@ namespace TeacherUniversity.Core.Services
         {
             return await repo.GetByIdAsync<IdentityUser>(id);
         }
+
+        public async Task<bool> TeacherCreated(string id)
+        {
+            bool created = false;
+
+            IQueryable<Teacher> allTeachers = repo.AllReadonly<Teacher>();
+
+            //allTeachers.FirstOrDefault(x => x.IdentityUserId == id);
+
+
+            //if (allTeachers.Any()) //await repo.AllReadonly<Teacher>()
+            //{
+            //    created = true;
+            //}
+
+            if (allTeachers.FirstOrDefault(x => x.IdentityUserId == id) != null) //await repo.AllReadonly<Teacher>()
+            {
+                created = true;
+            }
+
+            //created = allTeachers.Any(x => x.IdentityUserId == id);
+
+            return created;
+        }
     }
 }

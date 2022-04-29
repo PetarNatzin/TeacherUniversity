@@ -93,6 +93,8 @@ namespace TeacherUniversity.Infrastructure.Data.Common
         /// <returns>Error code</returns>
         int SaveChanges();
         Task<int> SaveChangesAsync();
+
+        //Task<bool> GetByTeacherIdentityID<T>(object identityUserId) where T : class; // не работи 
     }
 }
 
