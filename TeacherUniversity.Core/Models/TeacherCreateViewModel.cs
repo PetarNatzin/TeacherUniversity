@@ -9,9 +9,7 @@ using TeacherUniversity.Infrastructure.Data.Common.Enums;
 namespace TeacherUniversity.Core.Models
 {
     public class TeacherCreateViewModel
-    {        
-        //public int Id { get; set; }
-
+    {
         public string IdentityUserId { get; set; }                
 
         [Required]

@@ -189,11 +189,5 @@ namespace TeacherUniversity.Infrastructure.Data.Common
             var entities = All<T>(deleteWhereClause);
             DeleteRange(entities);
         }
-
-
-        //public async Task<bool> GetByTeacherIdentityID<T>(object identityUserId) where T : class //не работи, защото няма как да взема конкретно пропърти на колекцията - проблемът е разрешен чрез метод TeacherCreated в TeacherService
-        //{
-        //    return await DbSet<T>().ContainsAsync(identityUserId);
-        //}
     }
 }

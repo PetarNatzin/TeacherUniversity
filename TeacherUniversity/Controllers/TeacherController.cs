@@ -26,7 +26,7 @@ namespace TeacherUniversity.Controllers
 
             if (await service.TeacherCreated(userId))
             {
-                return View(); //"/teacher/index"
+                return View();
             }
             else
             {
@@ -35,11 +35,9 @@ namespace TeacherUniversity.Controllers
             
         }
 
-        public async Task<IActionResult> Create() //string id
+        public async Task<IActionResult> Create()
         {
-            //var model = await service.GetIdentityUserId(id);
-
-            return View(); //model
+            return View();
         }
 
         [HttpPost]
@@ -60,8 +58,6 @@ namespace TeacherUniversity.Controllers
             {
                 ViewData[MessageConstants.ErrorMessage] = "Възникна грешка!";
             }
-
-            //await service.CreateTeacher(model);
 
             return View(model);
         }

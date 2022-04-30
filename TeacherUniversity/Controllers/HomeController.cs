@@ -16,12 +16,7 @@ namespace TeacherUniversity.Controllers
 
         public IActionResult Index()
         {
-            //ViewData[MessageConstants.ErrorMessage] = "Възникна грешка!";
-            
-            //ViewData[MessageConstants.SuccessMessage] = "Данните бяха успешно заредени!";
-
-            return View();
-            //return Redirect("/teacher");
+            return View();            
         }
 
         public IActionResult Privacy()

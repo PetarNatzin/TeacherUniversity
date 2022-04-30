@@ -46,15 +46,6 @@ namespace TeacherUniversity.Core.Services
             await repo.SaveChangesAsync();
             result = true;
 
-            //if (user != null)
-            //{
-            //    //user.FirstName = model.FirstName;
-            //    //user.LastName = model.LastName;
-
-            //    await repo.SaveChangesAsync();
-            //    result = true;
-            //}
-
             return result;
         }
 
@@ -69,20 +60,10 @@ namespace TeacherUniversity.Core.Services
 
             IQueryable<Teacher> allTeachers = repo.AllReadonly<Teacher>();
 
-            //allTeachers.FirstOrDefault(x => x.IdentityUserId == id);
-
-
-            //if (allTeachers.Any()) //await repo.AllReadonly<Teacher>()
-            //{
-            //    created = true;
-            //}
-
-            if (allTeachers.FirstOrDefault(x => x.IdentityUserId == id) != null) //await repo.AllReadonly<Teacher>()
+            if (allTeachers.FirstOrDefault(x => x.IdentityUserId == id) != null)
             {
                 created = true;
             }
-
-            //created = allTeachers.Any(x => x.IdentityUserId == id);
 
             return created;
         }
