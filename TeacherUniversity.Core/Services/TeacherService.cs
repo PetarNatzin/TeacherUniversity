@@ -86,5 +86,38 @@ namespace TeacherUniversity.Core.Services
 
             return created;
         }
+
+        //public async Task<IEnumerable<TeacherDetailsViewModel>> GetTeacher(string id)
+        //{
+        //    IQueryable<Teacher> allTeachers = repo.AllReadonly<Teacher>();
+
+        //    TeacherDetailsViewModel currentTeacher = allTeachers
+        //        .FirstOrDefault(x => x.IdentityUserId == id)
+        //        .(u => new TeacherDetailsViewModel()
+        //        {
+        //            IdentityUserId = u.IdentityUserId,
+        //            FirstName = u.FirstName,
+        //            LastName = u.LastName,
+
+        //        })
+
+        //    return await allTeachers
+        //        .FirstOrDefault(x => x.IdentityUserId == id)
+        //        .Select(u => new TeacherDetailsViewModel()
+        //        {
+        //            Email = u.Email,
+        //            Id = u.Id,
+        //            Name = $"{u.FirstName} {u.LastName}"
+        //        })
+        //        .ToListAsync();
+
+        //    return await allTeachers.All<Teacher>()
+        //        .Select(u => new TeacherDetailsViewModel()
+        //        {
+
+                    
+        //        })
+        //        .ToListAsync();
+        //}
     }
 }
