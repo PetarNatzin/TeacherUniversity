@@ -37,6 +37,13 @@ namespace TeacherUniversity.Controllers
 
         public async Task<IActionResult> Create()
         {
+            string userId = ViewBag.userid = userManager.GetUserId(HttpContext.User);
+
+            if (await service.TeacherCreated(userId))
+            {
+                return Redirect("/teacher");
+            }
+
             return View();
         }
 
@@ -59,7 +66,7 @@ namespace TeacherUniversity.Controllers
                 ViewData[MessageConstants.ErrorMessage] = "Възникна грешка!";
             }
 
-            return View(model);
+            return Redirect("/teacher");
         }
     }
 }
